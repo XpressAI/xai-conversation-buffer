@@ -1,24 +1,49 @@
-# Xircuits Component Library Template
+# Xircuits Conversation Buffer
 
-This section should have a short description on what is does.
+A Xircuits component library for managing conversational context in agent applications. This library provides SQLite-based conversation buffer components that help maintain conversation history and context for AI agents built with Xircuits.
 
-## Prerequisites
+## Features
 
-A project may have prerequisites such as models that needs to be downloaded or non-python related setup. You may list them down here.
+- Persistent storage of conversations using SQLite
+- Support for multiple conversation contexts
+- Ability to retrieve recent conversation history
+- Handle both text and media content
+- Simple interface for adding and retrieving messages
 
 ## Installation
 
-To use this component library, ensure you have Xircuits installed, then simply run:
+To use this component library, ensure you have Xircuits installed, then run:
 
 ```
-xircuits install https://github.com/your-organization/your-repository
+xircuits install https://github.com/XpressAI/xai-conversation-buffer
 ```
 
-Alternatively you may manually copy the directory / clone or submodule the repository to your working Xircuits project directory then install the packages using:
+Alternatively, you can manually clone the repository to your Xircuits project directory and install dependencies:
 
 ```
 pip install -r requirements.txt
 ```
 
-## Tests
-A github action to test your workflow runs has been provided. Simply add the path of your workflows [here](.github/workflows/run-workflow-tests.yml#L11).
+## Components
+
+- **BufferOpenDB**: Opens or creates a SQLite database for storing conversations
+- **BufferCloseDB**: Safely closes the database connection
+- **BufferAddMessage**: Adds a new message to the conversation buffer
+- **BufferListMessages**: Retrieves conversation history with configurable parameters
+
+## Usage
+
+1. Open a database connection using `BufferOpenDB`
+2. Add messages to the conversation using `BufferAddMessage`
+3. Retrieve conversation history using `BufferListMessages`
+4. Close the database connection with `BufferCloseDB`
+
+The buffer stores messages with the following information:
+- Context ID (for managing multiple conversations)
+- Role (e.g., "user", "assistant")
+- Content (text or JSON content)
+- Media flag (indicates if the content includes media)
+
+## Example
+
+Check out the example workflows in the `examples` directory to see how to use these components in your agent applications.

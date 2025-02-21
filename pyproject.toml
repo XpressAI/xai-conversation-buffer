@@ -1,14 +1,14 @@
 [project]
-name = "xircuits-component-library-template"
+name = "xai-conversation-buffer"
 version = "0.1.0"
-description = "A brief description of your component library"
-authors = [{ name = "Your Name", email = "you@example.com" }]
+description = "SQLite-based conversation buffer components for Xircuits agent applications"
+authors = [{ name = "XpressAI", email = "support@xpress.ai" }]
 license = "Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/yourrepo/your-library"
-keywords = ["xircuits"]
+repository = "https://github.com/XpressAI/xai-conversation-buffer"
+keywords = ["xircuits", "agents", "conversation", "buffer", "context"]
 
 # Xircuits-specific configurations
 [tool.xircuits]
-default_example_path = "example.xircuits"
+default_example_path = "examples/conversation_buffer.xircuits"
 requirements_path = "requirements.txt"
